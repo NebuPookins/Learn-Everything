@@ -69,4 +69,8 @@ Append-only; when you edit an article, you just post a new version of that artic
       "redirectTo": "Santa Claus"
     }
 
+# Ideas
 
+* Detect and prevent cycles in dependency. It's okay for either the "Hot" article to be "Not cold" or the "Cold" article to be "Not hot", but not both.
+* Guidelines, e.g. "Start with an extensional definition (examples), then proceed onto intensional definitions."
+* Client side could optionally perform google-image search to provide extensional definition (e.g. article on dog; have a bunch of images of dogs via a google search by the client)
