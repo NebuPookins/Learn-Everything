@@ -28,3 +28,45 @@ NO! There is little more than this readme for now.
 # What's the licensing like?
 
 Undecided, but will be open source. E.g. if we use Sencha ExtJS for the UI, it'll probably end up being GPL3.
+
+# What's the planned architecture
+
+* [NodeJS](http://nodejs.org/)
+* [ExpressJS](http://expressjs.com/)
+* Some sort of JSON document store for the articles (perhaps [MongoDB](http://www.mongodb.org/)?)
+
+Append-only; when you edit an article, you just post a new version of that article. When a user retrieves an article by title, it's assumed they want the latest version, and so we just give the one with the biggest timestamp.
+
+## Example article format:
+
+    {
+      "title": "Multiplication",
+      "updated": 20140116020714,
+      "author": "nebu",
+      "type": "article",
+      "prereq": [ "Addition" ],
+      "markdown": "Multiplication is just repeated addition."
+    }
+
+
+    {
+      "title": "Cube",
+      "updated": 20140116020714,
+      "author": "nebu",
+      "type": "disambiguation",
+      "meanings": [
+        "Cube (geometry)": "a 6 sided geometric figure",
+        "Cube (operation)": "multiplying a number by itself three times"
+      ]
+    }
+
+
+    {
+      "title": "Saint Nick",
+      "updated": 20140116020714,
+      "author": "nebu",
+      "type": "redirection",
+      "redirectTo": "Santa Claus"
+    }
+
+
